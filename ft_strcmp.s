@@ -6,6 +6,8 @@ _ft_strcmp:
 	jnz .notequal			; If not equal jump to difference calc routine
 	cmp byte [RSI], 0		; Check for nullterm
 	jne .strloop			; If not nullterm keep looping
+	cmp byte [RDI], 0		; Check for null term in second str
+	jne .strloop			; If not nullterm keep looping
 	ret						; Return 0
 .notequal:
 	mov AL, byte [RDI - 1]	; Mov *s1 - 1 into AL register
