@@ -19,9 +19,13 @@ _ft_strdup:
 	pop RSI
 	mov RDI, RAX
 	mov RBX, RAX
+	cmp byte [RSI], 0
+	je .end
 .copy_loop:
 	movsb
 	cmp byte [RSI], 0
 	jne .copy_loop
+.end:
+	movsb
 	mov RAX, RBX
 	ret
