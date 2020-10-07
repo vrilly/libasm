@@ -4,9 +4,9 @@ _ft_strcmp:
 .strloop:
 	cmpsb				; Compare string byte and increase ptrs
 	jnz .notequal			; If not equal jump to difference calc routine
-	cmp byte [RSI], 0		; Check for nullterm
+	cmp byte [RSI - 1], 0		; Check for nullterm
 	jne .strloop			; If not nullterm keep looping
-	cmp byte [RDI], 0		; Check for null term in second str
+	cmp byte [RDI - 1], 0		; Check for null term in second str
 	jne .strloop			; If not nullterm keep looping
 	ret				; Return 0
 .notequal:
