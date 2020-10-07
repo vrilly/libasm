@@ -2,7 +2,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <string.h>
-#include "main.h"
+#include "libasm.h"
 
 int main(int argc, char *argv[])
 {
