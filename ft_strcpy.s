@@ -8,6 +8,6 @@ _ft_strcpy:
 	cmp byte [RSI], 0	; Compare byte in [RSI] data to 0
 	jne .strloop		; Jump to strloop if not equal
 .end:
-	movsb			; Copy one string byte and increase ptrs in RDI and RSI
-	mov RDI, RAX		; Copy NUL
+	movsb			; Copy NUL term
+	mov RDI, RAX		; Restore dst ptr
 	ret			; return
