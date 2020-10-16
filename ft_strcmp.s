@@ -10,9 +10,9 @@ _ft_strcmp:
 	jne .strloop			; If not nullterm keep looping
 	ret				; Return 0
 .notequal:
-	movzx RAX, byte [RDI - 1]		; Mov *s1 - 1 into AL register
-	movzx RBX, byte [RSI - 1]
-	cmp RAX, RBX		; Substract *s2 - 1 from AL
+	movzx R9, byte [RDI - 1]		; Mov *s1 - 1 into AL register
+	movzx R10, byte [RSI - 1]
+	cmp R9, R10		; Substract *s2 - 1 from AL
 	jl .signed
 	mov RAX, 1
 	ret

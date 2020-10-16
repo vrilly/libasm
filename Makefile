@@ -31,7 +31,7 @@ $(NAME) : $(ASM_OBJS)
 	$(AR) rcs $@ $^
 
 $(T_NAME) : main.c $(ASM_OBJS)
-	$(CC) -g -o $@ $^
+	$(CC) -Wall -Wextra -Werror -fsanitize=address -g -o $@ $^
 
 test: $(T_NAME)
 

@@ -45,12 +45,12 @@ void testptr(void *a, void *b)
 		printf("[OK] Returned %p\n", a);
 }
 
-int main(int argc, char *argv[])
+int main(void)
 {
 	char *empty = "";
 	char *test = "Hello friends! This is a horrible \xff strin\ng!";
-	char testcpy[strlen(test)];
-	char testcpyft[strlen(test)];
+	char testcpy[strlen(test) + 1];
+	char testcpyft[strlen(test) + 1];
 	char *ptr;
 	void *pb;
 	int ra, rb;
